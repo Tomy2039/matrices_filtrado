@@ -26,7 +26,7 @@ function mostrarMenu() {
                 mostrarDatos();
                 break;
             case "3":
-                filtrarPorDNI();  // ✅ Nombre corregido
+                filtrarPorDNI();  
                 break;
             case "4":
                 console.log("Saliendo del programa...");
@@ -53,7 +53,7 @@ function registrarPersona() {
                             telefonos.push(telefono);
                             agregarTelefono();
                         } else {
-                            agregarHijos();  // ✅ Se ejecuta solo cuando termina la carga de teléfonos
+                            agregarHijos();  
                         }
                     });
                 }
@@ -69,7 +69,7 @@ function registrarPersona() {
                     });
                 }
 
-                agregarTelefono(); // ✅ Se ejecuta en el orden correcto
+                agregarTelefono(); 
             });
         });
     });
@@ -96,7 +96,7 @@ function guardarPersona(nombre, apellido, dni, telefonos, hijos) {
 
 // Mostrar todos los datos con Python
 function mostrarDatos() {
-    const pythonProcess = spawn("python", ["proceso.py", "mostrar_todo"]);  // ✅ Nombre corregido
+    const pythonProcess = spawn("python", ["proceso.py", "mostrar_todo"]);  
 
     pythonProcess.stdout.on("data", (data) => {
         console.log("\n" + data.toString());
@@ -114,7 +114,7 @@ function mostrarDatos() {
 // Filtrar persona por DNI con Python
 function filtrarPorDNI() {
     rl.question("Ingrese el DNI a buscar: ", (dni) => {
-        const pythonProcess = spawn("python", ["proceso.py", "filtrar", dni]);  // ✅ Nombre corregido
+        const pythonProcess = spawn("python", ["proceso.py", "filtrar", dni]);  
 
         pythonProcess.stdout.on("data", (data) => {
             console.log("\n" + data.toString());
